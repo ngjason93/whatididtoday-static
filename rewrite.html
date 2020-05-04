@@ -1,0 +1,163 @@
+<html>
+<style>
+
+  #outerwrapper{display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+  }
+
+
+  .timeholder{grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  text-align: center;
+  height: 10vh;
+  border: 2px dotted black;
+
+}
+  .hourholder {background: white; height: 10vh ;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    text-align: center;
+    border: 2px dotted black;
+
+
+
+  }
+
+
+  .thirtyminholder {background: white; height: 5vh;    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    text-align: center;
+    border: 1px dotted black;
+}
+  .fifteenminholder {background: white; height: 2.5vh;  grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    text-align: center;
+    border: .5px dotted black;
+}
+
+  </style>
+
+<div id='outerwrapper'> WHY THE FUCK ARACKING
+  <div id='timeholder'> </div>
+  <div id='hourholder'> </div>
+  <div id='thirtyminholder'> </div>
+  <div id='fifteenminholder'> </div>
+</div>
+<script>
+
+class HourIns{
+  constructor(a,b,c,d,e,f,g,h){
+    this.hour = [a];
+    this.thirty = [b,c]
+    this.fifteen = [d,e,f,g]
+    this.timestart = [h]
+
+  }
+}
+function createHoursInstances(hours){
+  let emptylist = []
+  for (let i =0; i<hours; i++){
+    let a = new HourIns('hour',' 30 ',' 30',' 15 ',' 15 ','15 ','15 ',9)
+    emptylist.push(a)}
+
+  console.log(emptylist);
+  return emptylist
+
+}
+//indexOfList is index of list of dicts == dict
+
+function findDivContents(dict){
+  let values = Object.values(dict)
+  console.log(values)
+  let hourstext = values[0][0]
+  makeDiv('hourholder',hourstext)
+  for(let m=0; m<values[1].length; m++){
+    let thirtytext = values[1][m]
+    makeDiv('thirtyminholder',thirtytext)
+
+  }
+  for (let n = 0; n<values[2].length; n++){
+    let fifteentext = values[2][n]
+    makeDiv('fifteenminholder', fifteentext)
+  }
+}
+
+function setTime(dict){
+  let timeHolderContents=Object.values(dict)[3][0]
+  for (let ib = timeHolderContents; ib<timeHolderContents+9; ib++){
+    makeDiv('timeholder',ib+':00')
+  }
+}
+
+
+function makeDiv(parentdiv, divcontents){
+  let parent = document.getElementById(parentdiv);
+  let newdiv = document.createElement('div');
+  parent.appendChild(newdiv);
+  text = divcontents;
+  // newdiv.className = '' do i need to define var?
+  if (parentdiv == 'hourholder'){
+    newdiv.className = 'hourholder'
+  } else if (parentdiv == 'thirtyminholder'){
+    newdiv.className = 'thirtyminholder'
+  } else if(parentdiv == 'timeholder'){
+    newdiv.className = 'timeholder'
+  } else{
+    newdiv.className = 'fifteenminholder'
+  }
+  newdiv.innerHTML = text;
+  console.log('I have created the div')
+
+}
+function changeBackgroundColor(elmnt){
+  elmnt.style.backgroundColor = '#00FF00';
+
+}
+function changeInnerHTML(elmnt){
+  console.log('THe elem here i got to is:'+elmnt)
+  var text = prompt('What I did', 'Did nothing')
+  elmnt.innerHTML = text;
+  return text
+}
+function addOnClickEvents(classname){
+  let targetdiv = document.getElementsByClassName(classname)
+  for (let ia=0;ia<targetdiv.length;ia++){
+    targetdiv[ia].addEventListener('click',function(e){
+      let text =changeInnerHTML(targetdiv[ia]);
+
+      console.log('Text entered in prompt ' + text)
+      changeBackgroundColor(targetdiv[ia]);
+      /// function to save to the object class
+
+    },false)
+  }
+}
+
+
+
+let leestobj = createHoursInstances(9)
+console.log('length of leesobj' + leestobj.length)
+for (let j =0;j<leestobj.length;j++){
+  console.log('leesobj of J is ' +leestobj[j])
+  findDivContents(leestobj[j])
+  console.log('got here')
+
+  //call function that using _> one dictionary -> makes div
+}
+addOnClickEvents('hourholder');
+addOnClickEvents('thirtyminholder');
+addOnClickEvents('fifteenminholder')
+setTime(leestobj[0])
+
+</script>
+
+</html>
