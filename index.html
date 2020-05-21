@@ -1,275 +1,46 @@
-<!doctype html>
+<html>
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-
-  <title>What I ACTUALLY DID Today</title>
-  <meta name="description" content="Actually did">
-  <meta name="author" content="Jason Ng">
-
-  <!-- <link rel="stylesheet" href="static/styles.css?v=1.0"> -->
-
-</head>
 <style>
-*{border-radius: 20px;
-}
-#outterwrapper{
-  display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
-  grid-template-rows: 33% 33% 33%;
-
-}
-
-#sidebar {
-  font-size: 30px;
-  color: green;
-  grid-column-start: 5;
-  grid-column-end: 6;
-
-}
-
-.clock{
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 4;
-  font-size: 10vh ;
-  text-align: center;
-
-  ;
-}
-
-#firstbox {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 4;
-  border:1px solid black;
-  text-align: center;
-
-}
-.firstbox{height: 3.125vh;  border: 1px dotted black;
-}
-
-
-#middlebox {
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 4;
-  border:1px solid black;
-  text-align: center;}
-.middleboxdropzone{height: 6.25vh;  border: 1px dotted black;
-}
-#thirdbox{
-  grid-column-start: 4;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-row-end: 4;
-  border:1px solid black;
-  text-align: center;}
-
-
-
-.dropzone:hover {background: #FFA500	;}
-.dropzone:active {background: #FFA500	;}
-.timechunks {
-  border: 3px solid orange;
-  grid-column-start: 4;
-  grid-column-end:5;
-  border-radius: 50px;
-  text-align: center;
-  grid-row-start:1;
-  grid-row-end: 4;
-  align-content: center;
-}
-
-.thirdboxdropzone{height: 12.5vh;  border: 1px dotted black;
-}
 
 </style>
-<!-- <header> WHAT I DID TODAY </header> -->
 
 <body>
-  <input type='text' id='starttime' placeholder="Start Time">
+<div id='fblogin'> Hi there</div>
 
-<div id="outterwrapper">
-  <div id='sidebar'> WHAT I ACTUALLY DID TODAY :D
-  <ul>
-  <ol>To use: </ol>
-<ol> 1. Set Time on the left</ol>
-<ol> 2. Fill in bubbles by clicking on them</ol>
-<ol> 3. Enjoy!</ol>
-</ul> </div>
-  <div id="firstbox">
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-    <div class="firstbox" onclick="highlightHere(this,'#FFFF32')">   15min </div>
-
-
-
-
-  </div>
-  <div id="middlebox">
-    <!-- <input class="middleboxdropzone" onclick="highlightHere(this,'#33FFFF')" placeholder="30min"> -->
-    <div class="middleboxdropzone" onclick="highlightHere(this,'#00BFFF')">   30min </div>
-    <div class="middleboxdropzone" onclick="highlightHere(this,'#00BFFF')">   30min </div>
-    <div class="middleboxdropzone" onclick="highlightHere(this,'#00BFFF')">   30min </div>
-    <div class="middleboxdropzone" onclick="highlightHere(this,'#00BFFF')">   30min </div>
-    <div class="middleboxdropzone" onclick="highlightHere(this,'#00BFFF')">   30min </div>
-    <div class="middleboxdropzone" onclick="highlightHere(this,'#00BFFF')">   30min </div>
-    <div class="middleboxdropzone" onclick="highlightHere(this,'#00BFFF')">   30min </div>
-    <div class="middleboxdropzone" onclick="highlightHere(this,'#00BFFF')">   30min </div>
-    <div class="middleboxdropzone" onclick="highlightHere(this,'#00BFFF')">   30min </div>
-    <div class="middleboxdropzone" onclick="highlightHere(this,'#00BFFF')">   30min </div>
-    <div class="middleboxdropzone" onclick="highlightHere(this,'#00BFFF')">   30min </div>
-    <div class="middleboxdropzone" onclick="highlightHere(this,'#00BFFF')">   30min </div>
-    <div class="middleboxdropzone" onclick="highlightHere(this,'#00BFFF')">   30min </div>
-    <div class="middleboxdropzone" onclick="highlightHere(this,'#00BFFF')">   30min </div>
-    <div class="middleboxdropzone" onclick="highlightHere(this,'#00BFFF')">   30min </div>
-    <div class="middleboxdropzone" onclick="highlightHere(this,'#00BFFF')">   30min </div>
-
-
-
-  </div>
-  <div id="thirdbox">
-
-    <div class="thirdboxdropzone" onclick="highlightHere(this,'#FFA500	')">   1hour </div>
-    <div class="thirdboxdropzone" onclick="highlightHere(this,'#FFA500	')">   1hour </div>
-    <div class="thirdboxdropzone" onclick="highlightHere(this,'#FFA500	')">   1hour </div>
-    <div class="thirdboxdropzone" onclick="highlightHere(this,'#FFA500	')">   1hour </div>
-    <div class="thirdboxdropzone" onclick="highlightHere(this,'#FFA500	')">   1hour </div>
-    <div class="thirdboxdropzone" onclick="highlightHere(this,'#FFA500	')">   1hour </div>
-    <div class="thirdboxdropzone" onclick="highlightHere(this,'#FFA500	')">   1hour </div>
-    <div class="thirdboxdropzone" onclick="highlightHere(this,'#FFA500	')">   1hour </div>
-
-    </div>
-
-
-
-
-<div>
-  <button id="saveButton" onclick="exportHTML()"> Save Changes </button>
-
-</body>
+<fb:login-button
+  scope="public_profile,email"
+  onlogin="checkLoginState();">
+</fb:login-button>
 
 <script>
-function highlightHere(elmnt,clr) {
-  console.log(elmnt.style.backgroundColor);
-  elmnt.style.backgroundColor = clr;}
-// function changeTime(time){
-//   for (let count = 0; count<10; count++){
-//     let div = document.createElement('div')
-//     div.class='clock'
-//     div.innerHTML = <div> count +':00' </div>
-//     document.body.appendChild(div)
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '2668018976789045',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v7.0'
+    });
 
-let it = document.getElementById("starttime")
-it.addEventListener('keydown', startMaking =>{
-  if (startMaking.isComposing || startMaking.keyCode === 13) {
-    var input = document.getElementById("starttime").value;
-    console.log(input)
-    times = createTable(input);
-    createClock(times);}
-})
-function createTable(input){
-  input = Number(input);
-  console.log(input)
-  var times = input +':00 <br>' + (input+1)+':00 <br>'+ (input+2)+':00 <br>'
-  + (input+3)+':00 <br>'+ (input+4)+':00 <br>'+ (input+5)+':00 <br>'+ (input+6)
-  +':00 <br>'+ (input+7)+':00 <br>'+ (input+8)+':00 <br>';
-  return times;
-}
-function createClock(times){
-  let parent = document.getElementById('outterwrapper')
-  let child = document.createElement('div');
-  parent.appendChild(child);
-  child.className ='clock';
-  child.innerHTML = times;
-  console.log(parent.outerHTML)
-}
+    FB.AppEvents.logPageView();
 
-function changeInnerHTML(elem){
-  console.log('THe elem here i got to is:'+elem)
-  var text = prompt('What I did', 'Did nothing')
-  elem.innerHTML = text
-}
+  };
 
-function findClickables(classname){
-  let target = document.getElementsByClassName(classname);
-  console.log('This should be a list of classes '+target)
-  return target
-  }
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
 
 
-function recallEventListener(elem){
-  elem.addEventListener("click", function(e){
-    changeInnerHTML(elem)
-  },false)}
-
-// change this current element to add innerhtml//
-//create onclick event listner that changes inner html.
-window.addEventListener('load', function(e){
-  let target = findClickables('firstbox');
-  for (let z=0;z<target.length; z++){
-    recallEventListener(target[z])
-  console.log('firstboxcomplete')
-    }
-
-  let target1 = findClickables('middleboxdropzone');
-  for (let i=0; i<target1.length; i++){
-    recallEventListener(target1[i])
-  console.log('middleboxcomplete')
-    }
-  let target2 = findClickables('thirdboxdropzone');
-  for (let y=0; y<target2.length; y++){
-    recallEventListener(target2[y])
-  console.log('thirddropdone')
-    }
-
-// }
-//   let target2 = findClickables('thirdboxdropzone');
-//   console.log(target2);
-//   console.log(target2.length)
-//   for (let i=0;i<=target2.length; i++){
-//     recallEventListener(i)
-//   console.log('Complete2')}
-
-},false)
-
+ function checkLoginState() {
+   FB.getLoginStatus(function(response) {
+     statusChangeCallback(response);
+   });
+ }
 
 </script>
-
 
 </body>
 </html>
